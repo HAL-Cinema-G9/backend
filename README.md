@@ -1,24 +1,15 @@
-# README
+# HAL Cinema Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+.envファイルは以下のように作成してください。
+```
+POSTGRES_USERNAME=
+POSTGRES_PASSWORD=
+POSTGRES_DATABASE_NAME=
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 環境構築
+```bash
+bundle install
+rails db:migrate
+rails s
+```
