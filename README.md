@@ -28,3 +28,15 @@ backend> psql -f .\sql\hal_cinema.sql -U postgres -d hal_cinema
 ```bash
 rails s
 ```
+
+### 以下モデル作成時のコマンドメモ(環境構築には必要ないです)
+```bash
+# User
+rails generate model User provider:string uid:string name:string email:string
+
+# Movie
+rails generate model Movie title:string description:string director:string actors:string duration:integer thumbnail:string
+
+# Ticket
+rails generate model Ticket name:string price:decimal
+```

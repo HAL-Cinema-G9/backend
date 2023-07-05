@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'auth/:provider/callback', to: 'users#create'
       resources :movies
+      resources :tickets
     end
   end
 end
