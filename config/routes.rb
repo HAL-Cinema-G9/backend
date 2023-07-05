@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :movies
       resources :tickets
       resources :screens
+      resources :seats
     end
   end
 end
