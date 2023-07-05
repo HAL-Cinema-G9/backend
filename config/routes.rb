@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       post 'auth/:provider/callback', to: 'users#create'
       resources :movies
       resources :tickets
+      resources :screens
     end
   end
 end
