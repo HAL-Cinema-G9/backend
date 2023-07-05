@@ -39,4 +39,7 @@ rails generate model Movie title:string description:string director:string actor
 
 # Ticket
 rails generate model Ticket name:string price:decimal
+
+# Screen
+rails generate model Screen name:string
 ```
