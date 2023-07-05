@@ -42,4 +42,7 @@ rails generate model Ticket name:string price:decimal
 
 # Screen
 rails generate model Screen name:string
+
+# Seat
+rails generate model Seat screen:references column:string row:integer
 ```
