@@ -22,6 +22,13 @@ pgAdminにてhal_cinema(任意)というデータベースを作成してくだ�
 ```bash
 # ユーザー名がデフォルトのpostgres、データベース名がhal_cinemaという前提です
 backend> psql -f .\sql\hal_cinema.sql -U postgres -d hal_cinema
+
+# 全SQLが完成するまでは以下コマンドを順に使用してください
+# [注意]screen_idがseatsで連番で使用されるため作成に失敗した場合はscreensテーブルを削除して再作成してコマンドを使用してください
+psql -f .\sql\movies.sql -U postgres -d hal_cinema
+psql -f .\sql\tickets.sql -U postgres -d hal_cinema
+psql -f .\sql\screens.sql -U postgres -d hal_cinema
+psql -f .\sql\seats.sql -U postgres -d hal_cinema
 ```
 
 ### サーバ起動
