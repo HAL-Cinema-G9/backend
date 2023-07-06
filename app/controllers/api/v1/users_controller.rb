@@ -13,6 +13,18 @@ module Api
         rescue StandardError => e
           render json: { error: e.message }, status: :internal_server_error
         end
+
+        # GET /api/v1/user?email=<email>
+        def show
+          user = User.find_by(email: params[:email])
+          if user
+            render json: user
+          else
+            render json: { error: "ユーザーが見つかりませんでした" }, status: :not_found
+          end
+        rescue StandardError => e
+          render json: { error: e.message }, status: :internal_server_error
+        end
   
         # def destroy
         #   user = User.find_by(email: params[:email])
