@@ -52,4 +52,7 @@ rails generate model Screen name:string
 
 # Seat
 rails generate model Seat screen:references column:string row:integer
+
+# Schedule
+rails generate model Schedule movie:references screen:references date:datetime
 ```
