@@ -55,4 +55,7 @@ rails generate model Seat screen:references column:string row:integer
 
 # Schedule
 rails generate model Schedule movie:references screen:references date:datetime
+
+# Reservation
+rails generate model Reservation user:references ticket:references seat:references schedule:references
 ```
