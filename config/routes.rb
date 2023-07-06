@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :tickets
       resources :screens
       resources :seats
+      resources :schedules
     end
   end
 end
