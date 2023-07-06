@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :screens
       resources :seats
       resources :schedules
+      resources :reservations
     end
   end
 end
