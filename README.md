@@ -1,5 +1,23 @@
 # HAL Cinema Backend
 
+## API
+
+| HTTPメソッド | エンドポイント | 詳細 |
+| --- | --- | --- |
+| GET | /api/v1/user?email=<email> | ユーザー情報 |
+| GET・POST | /api/v1/movies | 映画情報一覧 |
+| GET・PUT・DELETE | /api/v1/movies/<id> | 映画情報 |
+| GET・POST | /api/v1/tickets | チケット情報一覧 |
+| GET・PUT・DELETE | /api/v1/tickets/<id> | チケット情報 |
+| GET・POST | /api/v1/screens | スクリーン情報一覧 |
+| GET・PUT・DELETE | /api/v1/screens/<id> | スクリーン情報 |
+| GET・POST | /api/v1/seats | 座席情報一覧 |
+| GET・PUT・DELETE | /api/v1/seats/<id> | 座席情報 |
+| GET・POST | /api/v1/schedules | スケジュール情報一覧 |
+| GET・PUT・DELETE | /api/v1/schedules/<id> | スケジュール情報 |
+| GET・POST | /api/v1/reservations | 予約情報一覧 |
+| GET・PUT・DELETE | /api/v1/reservations/<id> | 予約情報 |
+
 ## 環境構築
 
 ### 環境変数
