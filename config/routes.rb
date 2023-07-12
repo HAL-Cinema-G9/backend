@@ -6,7 +6,11 @@ Rails.application.routes.draw do
       resources :tickets
       resources :screens
       resources :seats
-      resources :schedules
+      resources :schedules do
+        collection do
+          get :upcoming
+        end
+      end
       resources :reservations
     end
   end
