@@ -7,6 +7,13 @@ module Api
           schedules = Schedule.all
           render json: schedules
         end
+
+        def upcoming
+          start_date = Date.today
+          end_date = start_date + 2.weeks
+          schedules = Schedule.where(date: start_date..end_date)
+          render json: schedules
+        end
   
         def show
           render json: @schedule

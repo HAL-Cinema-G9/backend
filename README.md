@@ -15,6 +15,7 @@
 | GET・PUT・DELETE | /api/v1/seats/id | 座席情報 |
 | GET・POST | /api/v1/schedules | スケジュール情報一覧 |
 | GET・PUT・DELETE | /api/v1/schedules/id | スケジュール情報 |
+| GET | /api/v1/schedules/upcoming | 当日から2週間分のスケジュール情報 |
 | GET・POST | /api/v1/reservations | 予約情報一覧 |
 | GET・PUT・DELETE | /api/v1/reservations/id | 予約情報 |
 
@@ -47,6 +48,11 @@ psql -f .\sql\movies.sql -U postgres -d hal_cinema
 psql -f .\sql\tickets.sql -U postgres -d hal_cinema
 psql -f .\sql\screens.sql -U postgres -d hal_cinema
 psql -f .\sql\seats.sql -U postgres -d hal_cinema
+# スケジュールは現在の日付をみてデータ変更をします(7/12)
+psql -f .\sql\schedules.sql -U postgres -d hal_cinema
+
+# ID関連でデータ挿入に失敗した場合は以下コマンドを使用してからデータ挿入のはじめから行ってください
+rails db:migrate:reset
 ```
 
 ### サーバ起動
