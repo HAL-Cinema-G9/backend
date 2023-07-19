@@ -4,19 +4,22 @@ module Api
         before_action :set_schedule, only: [:show, :update, :destroy]
   
         def index
-          schedules = Schedule.all
-          render json: schedules
+          schedules = Schedule.includes(:movie, :screen).all
+          render json: schedules, include: [:movie, :screen]
         end
 
-        def upcoming
+        def week
           start_date = Date.today
-          end_date = start_date + 2.weeks
-          schedules = Schedule.where(date: start_date..end_date)
-          render json: schedules
+          end_date = start_date + 7.days
+          week_schedules = Schedule.includes(:movie, :screen)
+            .where(date: start_date..end_date)
+            .all
+          render json: week_schedules, include: [:movie, :screen]
         end
   
         def show
-          render json: @schedule
+          schedule = Schedule.includes(:movie, :screen).find(params[:id])
+          render json: schedule, include: [:movie, :screen]
         end
   
         def create

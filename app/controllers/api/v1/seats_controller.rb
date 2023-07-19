@@ -5,13 +5,14 @@ module Api
   
         # GET /api/v1/seats
         def index
-          @seats = Seat.all
-          render json: @seats
+          seats = Seat.includes(:screen).all
+          render json: seats, include: :screen
         end
   
         # GET /api/v1/seats/:id
         def show
-          render json: @seat
+          seat = Seat.includes(:screen).find(params[:id])
+          render json: seat, include: :screen
         end
   
         # POST /api/v1/seats
