@@ -14,12 +14,14 @@ module Api
           week_schedules = Schedule.includes(:movie, :screen)
             .where(date: start_date..end_date)
             .all
+          # render json: week_schedules, each_serializer: ScheduleSerializer
           render json: week_schedules, include: [:movie, :screen]
+
         end
   
         def show
           schedule = Schedule.includes(:movie, :screen).find(params[:id])
-          render json: schedule, include: [:movie, :screen]
+          render json: schedule, serializer: ScheduleSerializer
         end
   
         def create
