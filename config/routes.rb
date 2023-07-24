@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :reservations do
       collection do
         get :user
+        get :schedule
       end
     end
     end
