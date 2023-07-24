@@ -12,6 +12,7 @@
 | GET・POST | /api/v1/screens | スクリーン情報一覧 |
 | GET・PUT・DELETE | /api/v1/screens/id | スクリーン情報 |
 | GET・POST | /api/v1/seats | 座席情報一覧 |
+| GET | /api/v1/seats/screen?screen_id=screen_id | 座席情報一覧 |
 | GET・PUT・DELETE | /api/v1/seats/id | 座席情報 |
 | GET・POST | /api/v1/schedules | スケジュール情報一覧 |
 | GET・PUT・DELETE | /api/v1/schedules/id | スケジュール情報 |
