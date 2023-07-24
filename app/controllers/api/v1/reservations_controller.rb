@@ -28,6 +28,15 @@ module Api
             schedule: { include: { movie: { only: [:title, :duration, :thumbnail] }, screen: { only: [:name] } } }
           }
         end
+
+        # GET /api/v1/reservations/schedule?schedule_id=schedule_id
+        def schedule
+          reservations = Reservation.includes(:user, :ticket, :seat, :schedule).where(schedule_id: params[:schedule_id]).all
+          render json: reservations, include: { user: { only: [:name, :email] },
+            ticket: { only: [:name, :price] },
+            seat: { only: [:column, :row] },
+            schedule: { include: { movie: { only: [:title, :duration, :thumbnail] }, screen: { only: [:name] } } } }
+        end
   
         def create
           reservation = Reservation.new(reservation_params)
