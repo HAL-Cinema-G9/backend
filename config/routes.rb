@@ -5,7 +5,11 @@ Rails.application.routes.draw do
       resources :movies
       resources :tickets
       resources :screens
-      resources :seats
+      resources :seats do
+        collection do
+          get :screen
+        end
+      end
       resources :schedules do
         collection do
           get :week

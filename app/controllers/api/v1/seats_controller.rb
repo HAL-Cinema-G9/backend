@@ -14,6 +14,12 @@ module Api
           seat = Seat.includes(:screen).find(params[:id])
           render json: seat, include: :screen
         end
+
+        # GET /api/v1/seats/screen?screen_id=screen_id
+        def screen
+          seats = Seat.includes(:screen).where(screen_id: params[:screen_id]).all
+          render json: seats, include: :screen
+        end
   
         # POST /api/v1/seats
         def create
