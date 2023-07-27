@@ -47,12 +47,12 @@ backend> psql -f .\sql\hal_cinema.sql -U postgres -d hal_cinema
 
 # 全SQLが完成するまでは以下コマンドを順に使用してください
 # [注意]screen_idがseatsで連番で使用されるため作成に失敗した場合はscreensテーブルを削除して再作成してコマンドを使用してください
-psql -f .\sql\movies.sql -U postgres -d hal_cinema
-psql -f .\sql\tickets.sql -U postgres -d hal_cinema
-psql -f .\sql\screens.sql -U postgres -d hal_cinema
-psql -f .\sql\seats.sql -U postgres -d hal_cinema
+psql -f ./sql/movies.sql -U postgres -d hal_cinema
+psql -f ./sql/tickets.sql -U postgres -d hal_cinema
+psql -f ./sql/screens.sql -U postgres -d hal_cinema
+psql -f ./sql/seats.sql -U postgres -d hal_cinema
 # スケジュールは現在の日付をみてデータ変更をします(7/20~7/31)
-psql -f .\sql\schedules.sql -U postgres -d hal_cinema
+psql -f ./sql/schedules.sql -U postgres -d hal_cinema
 
 # ID関連でデータ挿入に失敗した場合は以下コマンドを使用してからデータ挿入のはじめから行ってください
 rails db:migrate:reset
