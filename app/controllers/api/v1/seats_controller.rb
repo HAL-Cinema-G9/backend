@@ -54,7 +54,7 @@ module Api
         end
   
         def seat_params
-          params.require(:seat).permit(:screen_id, :column, :row)
+          params.permit(:screen_id, :column, :row)
         end
       end
     end

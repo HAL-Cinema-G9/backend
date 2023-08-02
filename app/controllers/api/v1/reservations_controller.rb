@@ -68,7 +68,7 @@ module Api
         end
   
         def reservation_params
-          params.require(:reservation).permit(:user_id, :ticket_id, :seat_id, :schedule_id)
+          params.permit(:user_id, :ticket_id, :seat_id, :schedule_id)
         end
       end
     end
