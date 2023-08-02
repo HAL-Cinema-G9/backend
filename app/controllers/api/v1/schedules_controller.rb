@@ -54,7 +54,7 @@ module Api
         end
   
         def schedule_params
-          params.require(:schedule).permit(:movie_id, :screen_id, :date)
+          params.permit(:movie_id, :screen_id, :date)
         end
       end
     end

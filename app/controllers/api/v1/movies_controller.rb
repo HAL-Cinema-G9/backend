@@ -41,7 +41,7 @@ module Api
         end
   
         def movie_params
-          params.require(:movie).permit(:title, :description, :director, :actors, :duration, :thumbnail)
+          params.permit(:title, :description, :director, :actors, :duration, :thumbnail)
         end
       end
     end

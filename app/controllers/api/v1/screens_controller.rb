@@ -47,7 +47,7 @@ module Api
         end
   
         def screen_params
-          params.require(:screen).permit(:name)
+          params.permit(:name)
         end
       end
     end

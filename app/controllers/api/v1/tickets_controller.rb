@@ -42,7 +42,7 @@ module Api
         end
   
         def ticket_params
-          params.require(:ticket).permit(:name, :price)
+          params.permit(:name, :price)
         end
       end
     end
