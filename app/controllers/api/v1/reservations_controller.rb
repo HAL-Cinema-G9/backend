@@ -38,12 +38,19 @@ module Api
         end
   
         def create
-          reservation = Reservation.new(reservation_params)
+          # Check if a reservation with the same schedule_id and seat_id already exists
+          existing_reservation = Reservation.find_by(schedule_id: params[:schedule_id], seat_id: params[:seat_id])
   
-          if reservation.save
-            render json: reservation, status: :created
+          if existing_reservation
+            render json: { error: "A reservation with the same schedule and seat already exists" }, status: :unprocessable_entity
           else
-            render json: reservation.errors, status: :unprocessable_entity
+            reservation = Reservation.new(reservation_params)
+  
+            if reservation.save
+              render json: reservation, status: :created
+            else
+              render json: reservation.errors, status: :unprocessable_entity
+            end
           end
         end
   
